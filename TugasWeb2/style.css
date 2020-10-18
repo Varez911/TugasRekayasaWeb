@@ -39,12 +39,17 @@ body{
   font-family: Monogram;
   color: var(--text-primary);
   background-color: var(--bg);
+  
   background-image: var(--bg-image);
   background-repeat: repeat-x;
   background-size: cover;
   background-blend-mode: overlay;
+  background-position: center;
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+  
 }
+
+/* Scrollbar Style */
 
 body::-webkit-scrollbar{
   width: 0.35rem;
@@ -214,7 +219,6 @@ p.creator{
 }
 
 .social-media a {
-    margin: 8px;
     font-size: 1rem;
     margin: 0.5rem;
     text-align:center;
@@ -225,6 +229,8 @@ p.creator{
 .social-media a i{
 	cursor: pointer;
 }
+
+/* Handle for computer icons */
 
 .icons{
    position:relative;
