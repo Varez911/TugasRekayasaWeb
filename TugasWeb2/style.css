@@ -1,0 +1,251 @@
+@font-face {
+  font-family: Monogram;
+  src: url(font/monogram_extended.ttf);
+}
+:root{
+  font-size: 32px;
+}
+
+.industrial{
+  --alternate-color2: #405949;
+  --bg: #19281F;
+  --bg-nav: linear-gradient(to right, #1E402A,#18261D);
+  --bg-dropdown: #19281F;
+  --text-primary:  #C8F2C2;
+  --text-secondary: #378C55;
+  --bg-scrollbar: #19281F;
+  --track-scrollbar: rgb(0, 70, 25);
+  --creator: rgb(0, 135, 47);
+
+  --bg-image: url(img/Urban.gif);
+}
+
+.tradisional{
+  --bg: #77E6F2;
+  --bg-nav: linear-gradient(to right, #77E6F2, #05AFF2);
+  --bg-dropdown:  #05AFF2;
+  --text-primary: #D95578;
+  --text-secondary:rgb(0, 82, 189);
+  --bg-scrollbar: rgb(0, 82, 189);
+  --track-scrollbar: #05AFF2;
+  --creator: rgb(0, 46, 106);
+
+  --bg-image: url(img/Flower.gif);
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Monogram;
+  color: var(--text-primary);
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-blend-mode: overlay;
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+body::-webkit-scrollbar{
+  width: 0.35rem;
+}
+
+body::-webkit-scrollbar-track{
+  background: var(--bg-scrollbar);
+}
+
+body::-webkit-scrollbar-thumb{
+  background: var(--track-scrollbar); 
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/* Start Navigation Bar */
+
+.navbar{
+  height: 70px;
+  width: 100%;
+  background: var(--bg-nav);
+  color: var(--text-primary);
+}
+
+.navbar-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+/* End Navigation Bar*/
+
+/* Header Shapes */
+
+header{
+  padding: 1em;
+  clip-path: polygon(100% 0px, 100% 40%, 50% 89%, 0% 40%, 0px 0px);
+  background: var(--bg-nav);
+  margin-bottom:  1em;
+  padding-bottom: 1.5em;
+  text-align: center;
+  
+}
+
+/* Start Dropdown */
+
+.dropdown{
+  position: absolute;
+  width: 400px;
+  opacity: 0;
+  z-index: 2;
+  background: var(--bg-dropdown);
+  border-top: 2px solid var(--bg);
+
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 1.3rem;
+  margin-top: 0.7rem;
+  padding: 0.5rem;
+
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+  transform: translateX(-40%);
+
+  transition: opacity .15s ease-out;
+}
+
+.has-dropdown:focus-within .dropdown{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown-item a{
+  width: 100%;
+  height: 100%;
+  size: 0.7rem;
+  padding-left: 10px;
+}
+
+.dropdown-item a::before{
+  content: ' ';
+  border: 2px solid var(--text-primary);
+  border-radius: 50%;
+  width: 0.65rem;
+  height: 0.65rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#industrial::before {
+    background: #19281F;
+}
+
+#tradisional::before {
+    background: #77E6F2;
+}
+
+/* End Dropdown */
+
+p{
+  color: var(--text-secondary);
+  margin: 1.5rem;
+}
+
+hr{
+  border: 1px solid var(--text-primary);
+}
+
+.filter{
+	background-image: var(--bg-image);
+	background-size: cover;
+	background-position:center;
+    position: absolute;
+    top: 180px;
+    bottom: -180px;
+    left: 0;
+    right: 0;
+	opacity:.20;
+  transition: opacity 350ms ease-in-out;
+}
+
+/* This is Footer style for contact */
+
+
+#contact{
+	margin: auto;
+	padding-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: var(--text-primary);
+}
+
+#contact p{
+	padding:10px;
+	text-align:center;
+	font-size:1rem;
+}
+
+.social-media{
+	padding: 10px;
+	display: flex;
+	position: center;
+  align-items: space-around;
+	justify-content:center;
+}
+
+p.creator{
+  color: var(--creator);
+  font-size: 24px;
+  text-align: right;
+}
+
+.social-media a {
+    margin: 8px;
+    font-size: 1rem;
+    margin: 0.5rem;
+    text-align:center;
+    display: inline-block;
+  	color: var(--text-primary);
+}
+
+.social-media a i{
+	cursor: pointer;
+}
+
+.icons{
+   position:relative;
+  height:70px;
+  width:100px;
+  margin:0 auto;
+}
+
+#icon-industrial{
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  transition: opacity 350ms ease-in-out;
+}
+
+#icon-tradisional{
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  transition: opacity 350ms ease-in-out;
+  opacity: 0;
+}
